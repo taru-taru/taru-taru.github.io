@@ -26,7 +26,7 @@ window.onload = function() {
 
 
 
-document.getElementById("button").onclick = function() {
+document.getElementById("button").onclick = function(event) {
  var class = event.currentTarget.className;
  location.href = '/page.html?name=' +  encodeURIComponent(class);
 };
