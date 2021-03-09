@@ -23,3 +23,10 @@ function mySort() {
 window.onload = function() {
  mySort();
 };
+
+
+
+document.getElementById("button").onclick = function() {
+ var class = event.currentTarget.className;
+ location.href = '/page.html?name=' +  encodeURIComponent(class);
+};
