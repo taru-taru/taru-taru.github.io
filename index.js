@@ -28,5 +28,6 @@ window.onload = function() {
 
 document.getElementById("button").onclick = function(event) {
  var class = event.currentTarget.className;
+ console.log(class)
  location.href = '/page.html?name=' +  encodeURIComponent(class);
 };
