@@ -26,8 +26,10 @@ window.onload = function() {
 
 
 
-document.getElementById("button").onclick = function(event) {
- var class = event.currentTarget.className;
- console.log(class);
- location.href = '/page.html?name=' +  encodeURIComponent(class);
-};
+
+
+
+let div = document.getElementById('button');
+div.addEventListener('click', function(event){
+  console.log(event.currentTarget);
+});
