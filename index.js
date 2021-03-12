@@ -29,7 +29,5 @@ window.onload = function() {
 
 
 
-  let div = document.getElementById('button');
-div.addEventListener('click', function(event){
-  console.log(event.currentTarget);
-});
+ver div = document.getElementById('button');
+div.addEventListener('click', function(event){console.log(event.currentTarget)});
