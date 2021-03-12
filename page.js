@@ -75,18 +75,20 @@ function setSwipe(elem) {
     });
 };
 
-
-
-
- window.addEventListener("load", function(){
+function startWindow(){
   let query = decodeURIComponent(location.search);
   let value = query.split('=');
   console.log(location.search);
   console.log(query);
   console.log(value);
   console.log(value[1]);
+  img.setAttribute('src', "book/"+qu+"/001.jpg");
+}
+
+
+ window.addEventListener("load", function(){
    setSwipe('#ill');
-   img.setAttribute('src', "book/"+qu+"/001.jpg");
+   startWindow()
  });
 
 
