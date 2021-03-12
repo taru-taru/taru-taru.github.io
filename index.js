@@ -29,5 +29,5 @@ window.onload = function() {
 
 
 
-ver div = document.getElementById('button');
+ver div = document.querySelectorAll("li");
 div.addEventListener('click', function(event){console.log(event.currentTarget)});
