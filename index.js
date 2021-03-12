@@ -32,6 +32,5 @@ window.onload = function() {
 var Zero = function(event) {
   var id = event.target.id;
   console.log(id);
-  return id;
-  location.href = '/page.html?name='+id;
+  location.href = '/page.html?name=' + id;
 };
