@@ -83,7 +83,6 @@ function setSwipe(elem) {
   let value = query.split('=');
   console.log(value);
   console.log(value[1]);
-  ver qu = value[1];
    setSwipe('#ill');
    img.setAttribute('src', "book/"+qu+"/001.jpg");
  });
