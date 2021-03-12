@@ -2,7 +2,7 @@ var inputElem = document.getElementById('page'); // input要素
 var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan要素
 var query = location.search;
 var value = query.split('=');
-ver qu = decodeURIComponent(value[1]);
+ver qu = value[1];
 
   var img = document.getElementById('ill');
 
