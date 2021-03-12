@@ -81,6 +81,8 @@ function setSwipe(elem) {
  window.addEventListener("load", function(){
   let query = decodeURIComponent(location.search);
   let value = query.split('=');
+  console.log(location.search);
+  console.log(query);
   console.log(value);
   console.log(value[1]);
    setSwipe('#ill');
