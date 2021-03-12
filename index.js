@@ -33,5 +33,5 @@ var Zero = function(event) {
   var id = event.target.id;
   console.log(id);
   return id;
-  location.href = '/page.html?'+id;
+  location.href = '/page.html?name='+id;
 };

@@ -1,5 +1,8 @@
 var inputElem = document.getElementById('page'); // input要素
 var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan要素
+var query = location.search;
+var value = query.split('=');
+ver qu = decodeURIComponent(value[1]);
 
   var img = document.getElementById('ill');
 
@@ -67,7 +70,7 @@ function setSwipe(elem) {
             }
         };
         var chang= ( '000' + num ).slice( -3 );
-        var change= chang+".jpg";
+        var change= "book/"+qu+"/"+chang+".jpg";
         img.setAttribute('src', change);
         img.setAttribute('class', chang);
         page.value=num;
