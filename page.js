@@ -79,10 +79,10 @@ function setSwipe(elem) {
 
 
  window.addEventListener("load", function(){
-  var query = location.search;
+  var query = decodeURIComponent(location.search);
   var value = query.split('=');
-  console.log(decodeURIComponent(value[1]));
-  ver qu = encodeURIComponent(value[1]);
+  console.log(value[1]);
+  ver qu = value[1];
    setSwipe('#ill');
    img.setAttribute('src', "book/"+qu+"/001.jpg");
  });
