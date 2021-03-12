@@ -29,5 +29,8 @@ window.onload = function() {
 
 
 
-ver div = document.querySelectorAll("li");
-div.addEventListener('click', function(event){console.log(event.currentTarget)});
+var Zero = function(event) {
+  var id = event.target.id;
+  console.log(id);
+  return id;
+}
