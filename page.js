@@ -83,6 +83,7 @@ function setSwipe(elem) {
 
  window.addEventListener("load", function(){
    setSwipe('#ill');
+   img.setAttribute('src', "book/"+qu+"/001.jpg");
  });
 
 
