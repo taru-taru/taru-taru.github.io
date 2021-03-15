@@ -57,6 +57,8 @@ function setSwipe(elem) {
         var img = document.getElementById('ill');
         var src = img.getAttribute('src');
         var num = Number(img.className);
+        
+        
         if (startX > moveX && startX > moveX + dist) {        // unからupにスワイプ
             if(num<Number(inputElem.getAttribute('max'))){
               var num= num+1;
@@ -77,12 +79,10 @@ function setSwipe(elem) {
 
 function startWindow(){
   let query = decodeURIComponent(location.search);
-  let value = query.split('=');
-  console.log(location.search);
-  console.log(query);
-  console.log(value);
-  console.log(value[1]);
-  img.setAttribute('src', "book/"+qu+"/001.jpg");
+  let quary1 = query.split('=');
+  console.log(quary2);
+  img.setAttribute('src', "book/"+value[1]+"/001.jpg");
+  currentValueElem.setAttribute('max', Number(value[2]));
 }
 
 
@@ -92,21 +92,6 @@ function startWindow(){
  });
 
 
-$(function(){
- var btn = $(".tag ul li.parent");
- var submenu = $(".child");
- var submenulink = $(".child ul li a");
-  //click
-	$(btn).bind("click", "focus", function(event){
-     var shownav = $(this).find(".child");
-    if($(shownav).css("display")=="none"){
-		$(shownav).slideDown("fast");
-    }else{
-		$(shownav).slideUp("fast");
-   }
- });
-
-});
 
 
 window.addEventListener('keydown',key);
