@@ -80,9 +80,9 @@ function setSwipe(elem) {
 function startWindow(){
   let query = decodeURIComponent(location.search);
   let quary1 = query.split('=');
-  console.log(quary2);
-  img.setAttribute('src', "book/"+value[1]+"/001.jpg");
-  currentValueElem.setAttribute('max', Number(value[2]));
+  console.log(quary1[1]);
+  img.setAttribute('src', "book/"+quary1[1]+"/001.jpg");
+  currentValueElem.setAttribute('max', Number(quary1[2]));
 }
 
 
