@@ -1,11 +1,12 @@
 var inputElem = document.getElementById('page'); // input要素
+var pagebar = document.getElementById('page');
 var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan要素
 
   var img = document.getElementById('ill');
 
 function OnButtonClick(pp) {
   var pNumber= ( '000' + Number(pp) ).slice( -3 );
-  img.setAttribute('src', pNumber+".jpg");
+  img.setAttribute('src', quary2+pNumber+".jpg");
   img.setAttribute('class', pNumber);
   page.value=pNumber;
   currentValueElem.innerText = Number(pp);
@@ -15,7 +16,7 @@ function OnButtonClick(pp) {
 function setCurrentValue(val){
   var chang= ( '000' + Number(val) ).slice( -3 );
   currentValueElem.innerText = val;
-  var change= chang+".jpg";
+  var change= quary2+chang+".jpg";
   img.setAttribute('src', change);
   img.setAttribute('class', chang);
 }
@@ -69,7 +70,7 @@ function setSwipe(elem) {
             }
         };
         var chang= ( '000' + num ).slice( -3 );
-        var change= "book/"+qu+"/"+chang+".jpg";
+        var change= quary2+chang+".jpg";
         img.setAttribute('src', change);
         img.setAttribute('class', chang);
         page.value=num;
@@ -80,9 +81,9 @@ function setSwipe(elem) {
 function startWindow(){
   let query = decodeURIComponent(location.search);
   let quary1 = query.split('=');
-  console.log(quary1[1]);
-  img.setAttribute('src', "book/"+quary1[1]+"/001.jpg");
-  currentValueElem.setAttribute('max', Number(quary1[2]));
+  var quary2 = "book/"+quary1[1]+"/"
+  img.setAttribute('src', quary2+"001.jpg");
+  pagebar.setAttribute('max', Number(quary1[2]));
 }
 
 
@@ -110,7 +111,7 @@ function key(event) {
             }
         };
         var chang= ( '000' + num ).slice( -3 );
-        var change= chang+".jpg";
+        var change= quary2+chang+".jpg";
         img.setAttribute('src', change);
         img.setAttribute('class', chang);
         page.value=num;
