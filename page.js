@@ -2,14 +2,14 @@ var inputElem = document.getElementById('page'); // input要素
 var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan要素
 var img = document.getElementById('ill');
 
+let query = decodeURIComponent(location.search);
+let quary1 = query.split('=');
+let quary2 = "book/"+quary1[1]+"/"
 
 
 
 //quaryからページ作成
 function startWindow(){
-  let query = decodeURIComponent(location.search);
-  let quary1 = query.split('=');
-  var quary2 = "book/"+quary1[1]+"/"
   img.setAttribute('src', quary2+"001.jpg");
   inputElem.setAttribute('max', Number(quary1[2]));
 }
