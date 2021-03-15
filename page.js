@@ -3,6 +3,24 @@ var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan
 var img = document.getElementById('ill');
 
 
+
+
+//quaryからページ作成
+function startWindow(){
+  let query = decodeURIComponent(location.search);
+  let quary1 = query.split('=');
+  var quary2 = "book/"+quary1[1]+"/"
+  img.setAttribute('src', quary2+"001.jpg");
+  inputElem.setAttribute('max', Number(quary1[2]));
+}
+window.onload = function(){
+  inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
+  OnButtonClick(inputElem.value); // ページ読み込み時に値をセット
+  setSwipe('#ill');
+  startWindow()
+};
+
+
 //"pp"にページ数を入れる。
 function OnButtonClick(pp) {
   let pNumber= ( '000' + Number(pp) ).slice( -3 );
@@ -94,21 +112,3 @@ window.addEventListener('keydown',function(event) {
         };
         OnButtonClick(num);
 });
-
-
-
-//quaryからページ作成
-function startWindow(){
-  let query = decodeURIComponent(location.search);
-  let quary1 = query.split('=');
-  var quary2 = "book/"+quary1[1]+"/"
-  img.setAttribute('src', quary2+"001.jpg");
-  inputElem.setAttribute('max', Number(quary1[2]));
-}
-
-window.onload = function(){
-  inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
-  OnButtonClick(inputElem.value); // ページ読み込み時に値をセット
-  setSwipe('#ill');
-  startWindow()
-};
