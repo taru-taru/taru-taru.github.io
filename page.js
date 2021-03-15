@@ -1,34 +1,37 @@
 var inputElem = document.getElementById('page'); // input要素
 var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan要素
+var img = document.getElementById('ill');
 
-  var img = document.getElementById('ill');
 
+//"pp"にページ数を入れる。
 function OnButtonClick(pp) {
-  var pNumber= ( '000' + Number(pp) ).slice( -3 );
+  let pNumber= ( '000' + Number(pp) ).slice( -3 );
   img.setAttribute('src', quary2+pNumber+".jpg");
-  img.setAttribute('class', pNumber);
-  page.value=pNumber;
+  img.setAttribute('class', Number(pp));
+  page.value=Number(pp);
   currentValueElem.innerText = Number(pp);
 }
 
-// 現在の値をspanに埋め込む関数
+
+/*
 function setCurrentValue(val){
   var chang= ( '000' + Number(val) ).slice( -3 );
-  currentValueElem.innerText = val;
   var change= quary2+chang+".jpg";
+  currentValueElem.innerText = val;
   img.setAttribute('src', change);
   img.setAttribute('class', chang);
 }
-// inputイベント時に値をセットする関数
+*/
+
+
+//バーの値をページ数に
 function rangeOnChange(e){
-  setCurrentValue(e.target.value);
-}
-window.onload = function(){
-  inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
-  setCurrentValue(inputElem.value); // ページ読み込み時に値をセット
+  OnButtonClick(e.target.value);
 }
 
 
+
+//タッチスワイプによるページ移動
 var chang,change;
 function setSwipe(elem) {
     var t = document.querySelector(elem);
@@ -68,35 +71,15 @@ function setSwipe(elem) {
               var num=num-1;
             }
         };
-        var chang= ( '000' + num ).slice( -3 );
-        var change= quary2+chang+".jpg";
-        img.setAttribute('src', change);
-        img.setAttribute('class', chang);
-        page.value=num;
-        currentValueElem.innerText = num;
+        OnButtonClick(num);
     });
 };
 
-function startWindow(){
-  let query = decodeURIComponent(location.search);
-  let quary1 = query.split('=');
-  var quary2 = "book/"+quary1[1]+"/"
-  img.setAttribute('src', quary2+"001.jpg");
-  inputElem.setAttribute('max', Number(quary1[2]));
-}
-
-
- window.addEventListener("load", function(){
-   setSwipe('#ill');
-   startWindow()
- });
 
 
 
-
-window.addEventListener('keydown',key);
-
-function key(event) {
+//キー入力でページ移動
+window.addEventListener('keydown',function(event) {
         var img = document.getElementById('ill');
         var src = img.getAttribute('src');
         var num = Number(img.className);
@@ -109,10 +92,23 @@ function key(event) {
               var num=num-1;
             }
         };
-        var chang= ( '000' + num ).slice( -3 );
-        var change= quary2+chang+".jpg";
-        img.setAttribute('src', change);
-        img.setAttribute('class', chang);
-        page.value=num;
-        currentValueElem.innerText = num;
+        OnButtonClick(num);
+};
+
+
+
+//quaryからページ作成
+function startWindow(){
+  let query = decodeURIComponent(location.search);
+  let quary1 = query.split('=');
+  var quary2 = "book/"+quary1[1]+"/"
+  img.setAttribute('src', quary2+"001.jpg");
+  inputElem.setAttribute('max', Number(quary1[2]));
+}
+
+window.onload = function(){
+  inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
+  OnButtonClick(inputElem.value); // ページ読み込み時に値をセット
+  setSwipe('#ill');
+  startWindow()
 };
