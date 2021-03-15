@@ -1,5 +1,4 @@
 var inputElem = document.getElementById('page'); // input要素
-var pagebar = document.getElementById('page');
 var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan要素
 
   var img = document.getElementById('ill');
@@ -83,7 +82,7 @@ function startWindow(){
   let quary1 = query.split('=');
   var quary2 = "book/"+quary1[1]+"/"
   img.setAttribute('src', quary2+"001.jpg");
-  pagebar.setAttribute('max', Number(quary1[2]));
+  inputElem.setAttribute('max', Number(quary1[2]));
 }
 
 
