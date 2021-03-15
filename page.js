@@ -93,7 +93,7 @@ window.addEventListener('keydown',function(event) {
             }
         };
         OnButtonClick(num);
-};
+});
 
 
 
