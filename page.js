@@ -107,7 +107,7 @@ window.addEventListener('keydown',function(event) {
 
 //menuBar
 function openMenu(){
- let menu = document.getElementById(menu)
+ let menu = document.getElementById("menu")
  if(menu.classList.contains("open")==true){
   menu.classList.remove("open");
  }else{
