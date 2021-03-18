@@ -31,17 +31,6 @@ function OnButtonClick(pp) {
 }
 
 
-/*
-function setCurrentValue(val){
-  var chang= ( '000' + Number(val) ).slice( -3 );
-  var change= quary2+chang+".jpg";
-  currentValueElem.innerText = val;
-  img.setAttribute('src', change);
-  img.setAttribute('class', chang);
-}
-*/
-
-
 //バーの値をページ数に
 function rangeOnChange(e){
   OnButtonClick(e.target.value);
@@ -112,3 +101,15 @@ window.addEventListener('keydown',function(event) {
         };
         OnButtonClick(num);
 });
+
+
+
+
+//menuBar
+function openMenu(){
+ if(document.getElementById(menu).classList.contains("open")==true){
+  document.getElementById(menu).classList.remove("open");
+ }else{
+  document.getElementById(menu).classList.add("open");
+ }
+}

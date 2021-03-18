@@ -91,3 +91,18 @@ span{
  text-align: right;
  right:0;
 }
+
+#menu {
+  width: 250px;
+  height: 100%;
+  background-color: #191970;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  transform: translateX(250px); /* right0から250px移動した位置 */
+  transition: all .5s; /* 移動する速さ */
+}
+#menu.open {
+  transform: translateX(0); /* right0まで-250px移動 */
+}
