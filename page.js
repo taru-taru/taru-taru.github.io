@@ -107,9 +107,10 @@ window.addEventListener('keydown',function(event) {
 
 //menuBar
 function openMenu(){
- if(document.getElementById(menu).classList.contains("open")==true){
-  document.getElementById(menu).classList.remove("open");
+ let menu = document.getElementById(menu)
+ if(menu.classList.contains("open")==true){
+  menu.classList.remove("open");
  }else{
-  document.getElementById(menu).classList.add("open");
+  menu.classList.add("open");
  }
 }
