@@ -109,4 +109,5 @@ span{
 #menu li{
   font-size:10vh;
   color:#FFF;
+  list-style-type:none;
 }
