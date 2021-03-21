@@ -16,7 +16,7 @@ function startWindow(){
   img.setAttribute('src', quary2+"001.jpg");
   inputElem.setAttribute('max', Number(quary1[2]));
   for (let i = 0; i < quary1.length-1; i++) {
-    Q=Q+"<li onclick=&quot;OnButtonClick("+item[i]+")&quot;>"+item[i]+"</li>"
+    Q=Q+"<li onclick=OnButtonClick("+item[i]+">"+item[i]+"</li>"
   }
   menu.innerHTML="<ul>"+Q+"</ul>"
 }
