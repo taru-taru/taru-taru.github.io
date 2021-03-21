@@ -107,7 +107,7 @@ span{
   transform: translateX(0); /* right0まで-250px移動 */
 }
 #menu li{
-  font-size:10vh;
+  font-size:5vh;
   color:#FFF;
   list-style-type:none;
 }
