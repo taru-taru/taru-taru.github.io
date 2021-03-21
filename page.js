@@ -1,10 +1,13 @@
 var inputElem = document.getElementById('page'); // input要素
 var currentValueElem = document.getElementById('bar'); // 埋め込む先のspan要素
 var img = document.getElementById('ill');
+let menu = document.getElementById("menu")
+let Q=""
 
 let query = decodeURIComponent(location.search);
 let quary1 = query.split('=');
-let quary2 = "book/"+quary1[1]+"/"
+let quary2 = "book/"+quary1[1]+"/";
+let item = query1[3].split('-');
 
 
 
@@ -12,6 +15,10 @@ let quary2 = "book/"+quary1[1]+"/"
 function startWindow(){
   img.setAttribute('src', quary2+"001.jpg");
   inputElem.setAttribute('max', Number(quary1[2]));
+  for (let i = 0; i < quary1.length-1; i++) {
+    Q=Q+"<li onclick=&quot;OnButtonClick("+item[i]+")&quot;></li>"
+  }
+  menu.innerHTML="<ul>"+Q+"</ul>"
 }
 window.onload = function(){
   inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
@@ -107,7 +114,6 @@ window.addEventListener('keydown',function(event) {
 
 //menuBar
 function openMenu(){
- let menu = document.getElementById("menu")
  if(menu.classList.contains("open")==true){
   menu.classList.remove("open");
  }else{
