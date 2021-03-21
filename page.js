@@ -7,7 +7,7 @@ let Q=""
 let query = decodeURIComponent(location.search);
 let quary1 = query.split('=');
 let quary2 = "book/"+quary1[1]+"/";
-let item = query1[3].split('-');
+let item = quary1[3].split('-');
 
 
 
