@@ -98,9 +98,9 @@ span{
   background-color: #222;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 10;
-  transform: translateX(250px); /* right0から250px移動した位置 */
+  transform: translateX(-250px); /* right0から250px移動した位置 */
   transition: all .5s; /* 移動する速さ */
 }
 #menu.open {
