@@ -25,9 +25,8 @@ window.onload = function(){
   OnButtonClick(inputElem.value); // ページ読み込み時に値をセット
   setSwipe('#ill');
   startWindow();
-  if (quary1.length>3) {
-   let BB=document.querySelector("b");
-   BB.style.display = 'nune';}
+  if (quary1.length<3) {
+   document.querySelector("b").style.display = 'nune'}
 };
 
 
