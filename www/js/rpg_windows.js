@@ -2552,13 +2552,13 @@ Window_Status.prototype.refresh = function() {
 Window_Status.prototype.drawBlock1 = function(y) {
     this.drawActorName(this._actor, 6, y);
     this.drawActorClass(this._actor, 192, y);
-//    this.drawActorNickname(this._actor, 432, y);
+    this.drawActorNickname(this._actor, 432, y);
 };
 
 Window_Status.prototype.drawBlock2 = function(y) {
     this.drawActorFace(this._actor, 12, y);
     this.drawBasicInfo(204, y);
-//    this.drawExpInfo(456, y);
+    this.drawExpInfo(456, y);
 };
 
 Window_Status.prototype.drawBlock3 = function(y) {
@@ -2567,14 +2567,14 @@ Window_Status.prototype.drawBlock3 = function(y) {
 };
 
 Window_Status.prototype.drawBlock4 = function(y) {
-//    this.drawProfile(6, y);
+    this.drawProfile(6, y);
 };
 
 Window_Status.prototype.drawHorzLine = function(y) {
     var lineY = y + this.lineHeight() / 2 - 1;
-//    this.contents.paintOpacity = 48;
-//    this.contents.fillRect(0, lineY, this.contentsWidth(), 2, this.lineColor());
-//    this.contents.paintOpacity = 255;
+    this.contents.paintOpacity = 48;
+    this.contents.fillRect(0, lineY, this.contentsWidth(), 2, this.lineColor());
+    this.contents.paintOpacity = 255;
 };
 
 Window_Status.prototype.lineColor = function() {

@@ -887,7 +887,7 @@ Game_Screen.prototype.updatePictures = function() {
 };
 
 Game_Screen.prototype.startFlashForDamage = function() {
-    this.startFlash([0, 0, 0, 0], 8);
+    this.startFlash([255, 0, 0, 128], 8);
 };
 
 Game_Screen.prototype.showPicture = function(pictureId, name, origin, x, y,
@@ -8233,7 +8233,7 @@ Game_Vehicle.prototype.resetDirection = function() {
 
 Game_Vehicle.prototype.initMoveSpeed = function() {
     if (this.isBoat()) {
-        this.setMoveSpeed(3);
+        this.setMoveSpeed(4);
     } else if (this.isShip()) {
         this.setMoveSpeed(5);
     } else if (this.isAirship()) {

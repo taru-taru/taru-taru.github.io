@@ -1,5 +1,5 @@
 {
-    "name": "crotch",
+    "name": "",
     "main": "index.html",
     "js-flags": "--expose-gc",
     "window": {
